@@ -68,7 +68,7 @@ def index():
                     #fw.write(searchString+","+name.replace(",", ":")+","+rating + "," + commentHead.replace(",", ":") + "," + custComment.replace(",", ":") + "\n")
                     mydict = {"Product": searchString, "Name": name, "Rating": rating, "CommentHead": commentHead,
                               "Comment": custComment} # saving that detail to a dictionary
-                    x = table.insert_one(mydict) #insertig the dictionary containing the rview comments to the collection
+                    x = table.insert_one(mydict) #insertig the dictionary containing the review comments to the collection
                     reviews.append(mydict) #  appending the comments to the review list
                 return render_template('results.html', reviews=reviews) # showing the review to the user
         except:

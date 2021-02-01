@@ -7,15 +7,14 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
 app = Flask(__name__)  # initialising the flask app with the name 'app'
-
-
+CORS(app)
 @app.route('/', methods=['GET'])
 def homepage():
     return render_template('index.html')
 
 # base url + /
 #http://localhost:8000 + /
-@app.route('/scrap',methods=['POST']) # route with allowed methods as POST and GET
+@app.route('/scrap',methods=['POST','GET']) # route with allowed methods as POST and GET
 def index():
     if request.method == 'POST':
         searchString = request.form['content'].replace(" ","") # obtaining the search string entered in the form
