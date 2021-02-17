@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 import pymongo
 
-app = Flask(__name__)  # initialising the flask app with the name 'app'
+app = Flask(__name__)  # initialising the flask app with the name 'app'pi
 
 
 # base url + /
